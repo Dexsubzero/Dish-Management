@@ -1,5 +1,6 @@
 @extends('dashboard.layout')
 @section('content')
+@include('partial.nav-services')
 <div class="container-xxl py-5">
             <div class="container">
                 <div class="row g-4">
@@ -42,6 +43,7 @@
                 </div>
             </div>
         </div>
-        
+
+        @include('dashboard.footer')
         @endsection
 

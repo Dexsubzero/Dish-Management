@@ -17,6 +17,9 @@ class DashboardController extends Controller
     }
     public function contacts() {
         return view('directory.contacts');
-        
+
+    }
+    public function home(){
+        return view('dashboard.home');
     }
 }

@@ -25,7 +25,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0 pe-4">
-                        <a href="{{ route('dashboard.welcome') }}" class="nav-item nav-link active">Home</a>
+                        <a href="{{ route('dashboard.home') }}" class="nav-item nav-link active">Home</a>
 
                         <a href="/services" class="nav-item nav-link">Service</a>
                         <a href="/menu" class="nav-item nav-link">Menu</a>
@@ -39,9 +39,12 @@
                         </div>
                         <a href="/contacts" class="nav-item nav-link">Contact</a>
                     </div>
-                        <a href="/login" class=""style="margin-right: 10px;">Log in</a>
-
-                        <a href="/register" class="">Sign up</a>
+                    <li class="nav-item">
+                        <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <button class="btn btn-danger" type="submit">Logout</button>
+                        </form>
+                    </li>
                 </div>
             </nav>
 
@@ -49,7 +52,7 @@
                 <div class="container my-5 py-5">
                     <div class="row align-items-center g-5">
                         <div class="col-lg-6 text-center text-lg-start">
-                            <h1 class="display-3 text-white animated slideInLeft">Please log in to register to access content.
+                            <h1 class="display-3 text-white animated slideInLeft">If food is love,<br>we’re the matchmakers!
                             </h1>
                             <p class="text-white animated slideInLeft mb-4 pb-2"></p>
                             <a href="" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft"><i
@@ -63,5 +66,7 @@
             </div>
         </div>
         <!-- Navbar & Hero End -->
+
+        <h1> Please log in to register to access content.</h1>
 
         @include('dashboard.footer')
