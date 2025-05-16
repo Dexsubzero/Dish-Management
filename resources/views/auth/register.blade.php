@@ -56,7 +56,7 @@
                                 </div>
                             </div>
                             <div class="d-grid mb-3">
-                                <button type="submit" class="btn btn-success btn-lg">Register</button>
+                                <button type="submit" class="btn btn-warning btn-lg" style="background-color: #FF9C00; color: hsl(0, 0%, 95%); font-weight: bold;">Register</button>
                             </div>
                         </form>
                         <div class="text-center">

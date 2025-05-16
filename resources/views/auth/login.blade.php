@@ -37,7 +37,7 @@
                             </div>
 
                             <div class="d-grid mb-3">
-                                <button type="submit" class="btn btn-success btn-lg">Login</button>
+                                <button type="submit" class="btn btn-warning btn-lg" style="background-color: #FF9C00; color: hsl(0, 0%, 95%); font-weight: bold;">Login</button>
                             </div>
                         </form>
 
