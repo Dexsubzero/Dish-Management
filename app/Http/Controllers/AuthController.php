@@ -43,10 +43,16 @@ class AuthController extends Controller
             'password' => 'required|min:8',
         ]);
 
-        if (auth()->attempt($validated)) {
+          if (auth()->attempt($validated)) {
             request()->session()->regenerate();
 
-            return redirect()->route('dashboard.home');
+            if (auth()->user()->is_role == 1) {
+                return redirect()->route('adminmanager.dashboard');
+            } elseif (auth()->user()->is_role == 2) {
+                return redirect()->route('adminmanager.dashboard');
+            } else {
+                return redirect()->route('dashboard.home');
+            }
         }
 
         return redirect()->route('login')->withErrors([
