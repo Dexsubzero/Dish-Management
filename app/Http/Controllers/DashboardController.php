@@ -19,7 +19,18 @@ class DashboardController extends Controller
         return view('directory.contacts');
 
     }
+    public function about(){
+        return view('directory.about');
+    }
     public function home(){
         return view('dashboard.home');
+    }
+
+    public function cart(){
+        return view('directory.cart');
+    }
+
+    public function checkout(){
+        return view('directory.checkout');
     }
 }

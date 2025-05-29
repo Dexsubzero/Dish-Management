@@ -6,7 +6,7 @@
         <div class="row g-0">
             <div class="col-md-6">
                 <div class="image">
-                    <img src="img/zamora's.jpg" alt="address">
+                    <img src="{{ asset('img/zamoras.jpg') }}" alt="address">
                 </div>
             </div>
             <div class="col-md-6 bg-dark d-flex align-items-center">

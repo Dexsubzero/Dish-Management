@@ -12,9 +12,9 @@
          <div class="collapse navbar-collapse" id="navbarCollapse">
              <div class="navbar-nav ms-auto py-0 pe-4">
                  <a href="{{ route('dashboard.home') }}" class="nav-item nav-link">Home</a>
-                 <a href="{{ route('directory.services')}}" class="nav-item nav-link active">Service</a>
+                 <a href="{{ route('directory.services') }}" class="nav-item nav-link">Service</a>
                  <a href="{{ route('directory.menu')}}" class="nav-item nav-link">Menu</a>
-                 <a href="{{ route('directory.about')}}" class="nav-item nav-link">About</a>
+                 <a href="{{ route('directory.about')}}" class="nav-item nav-link active">About</a>
                  <a href="{{ route('directory.contacts')}}" class="nav-item nav-link">Contact</a>
              </div>
              <form action="{{ route('logout') }}" method="POST">
@@ -28,7 +28,7 @@
          <div class="container my-5 py-5">
              <div class="row align-items-center g-5">
                  <div class="col-lg-6 text-center text-lg-start">
-                     <h1 class="display-3 text-white animated slideInLeft">Welcome To Our Services!
+                     <h1 class="display-3 text-white animated slideInLeft">Please Contact us if there's any question!
                      </h1>
                      <p class="text-white animated slideInLeft mb-4 pb-2"></p>
                      <a href="{{ route('directory.cart') }}" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft"><i

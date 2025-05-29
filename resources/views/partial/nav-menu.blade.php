@@ -12,9 +12,10 @@
          <div class="collapse navbar-collapse" id="navbarCollapse">
              <div class="navbar-nav ms-auto py-0 pe-4">
                  <a href="{{ route('dashboard.home') }}" class="nav-item nav-link">Home</a>
-                 <a href="/services" class="nav-item nav-link">Service</a>
-                 <a href="/menu" class="nav-item nav-link active">Menu</a>
-                 <a href="/contacts" class="nav-item nav-link">Contact</a>
+                 <a href="{{ route('directory.services')}}" class="nav-item nav-link">Service</a>
+                 <a href="{{ route('directory.menu')}}" class="nav-item nav-link active">Menu</a>
+                 <a href="{{ route('directory.about')}}" class="nav-item nav-link">About</a>
+                 <a href="{{ route('directory.contacts')}}" class="nav-item nav-link">Contact</a>
              </div>
              <form action="{{ route('logout') }}" method="POST">
                  @csrf
@@ -30,11 +31,11 @@
                      <h1 class="display-3 text-white animated slideInLeft">If food is love,<br>we’re the matchmakers!
                      </h1>
                      <p class="text-white animated slideInLeft mb-4 pb-2"></p>
-                     <a href="" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft"><i
+                     <a href="{{ route('directory.cart') }}" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft"><i
                         class="fas fa-cart-plus"></i> Cart</a>
                  </div>
                  <div class="col-lg-6 text-center text-lg-end overflow-hidden">
-                     <img class="img-fluid" src="img/hero.png" alt="">
+                     <img class="img-fluid" src="{{ asset('img/hero.png') }}" alt="">
                  </div>
              </div>
          </div>

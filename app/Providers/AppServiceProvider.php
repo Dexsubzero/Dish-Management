@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Models\Dish;
+use Illuminate\Support\Facades\View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +21,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+         View::composer('*', function ($view) {
+            $dishes = Dish::all(); // Be cautious with large datasets
+            $view->with('dishes', $dishes);
+        });
     }
 }

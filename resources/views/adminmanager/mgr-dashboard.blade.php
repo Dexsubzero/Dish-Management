@@ -2,9 +2,9 @@
 
     @section('content')
 
-    @include('adminmanager.sidebar')
+    @include('adminmanager.mgr-sidebar')
         <!-- Main Content -->
-        <div id="dashboard" class="main-content container-fluid p-4" style="flex: 1;">
+        <div id="main-content" class="main-content container-fluid p-4" style="flex: 1;">
             <!-- Header -->
             <div class="header d-flex justify-content-between align-items-center">
                 <div>
