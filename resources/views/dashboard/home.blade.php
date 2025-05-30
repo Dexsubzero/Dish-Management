@@ -257,12 +257,12 @@
                                     <div class="card-body">
                                         <div class="row align-items-center">
                                             <div class="col-md-3">
-                                                <p class="mb-1 text-muted small">Order #OR-123456</p>
-                                                <p class="mb-0 fw-bold">Placed on May 15, 2023</p>
+                                                <p class="mb-1 text-muted small">Order # 0010</p>
+                                                <p class="mb-0 fw-bold">Calamari</p>
                                             </div>
                                             <div class="col-md-3">
                                                 <p class="mb-1 text-muted small">Total</p>
-                                                <p class="mb-0 fw-bold">$89.98</p>
+                                                <p class="mb-0 fw-bold">₱89.98</p>
                                             </div>
                                             <div class="col-md-3">
                                                 <p class="mb-1 text-muted small">Status</p>
@@ -283,7 +283,7 @@
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title">Order #OR-123456</h5>
+                                    <h5 class="modal-title">Order # 0010</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
@@ -294,14 +294,13 @@
                                             <p class="mb-1"><strong>Order Date:</strong> May 15, 2023</p>
                                             <p class="mb-1"><strong>Status:</strong> <span
                                                     class="order-status status-delivered">Delivered</span></p>
-                                            <p class="mb-1"><strong>Payment Method:</strong> Credit Card</p>
+                                            <p class="mb-1"><strong>Total Amount:</strong> ₱89.98</p>
                                         </div>
                                         <div class="col-md-6">
                                             <h6>Delivery Address</h6>
                                             <p class="mb-1">John Doe</p>
-                                            <p class="mb-1">123 Main Street</p>
-                                            <p class="mb-1">New York, NY 10001</p>
-                                            <p class="mb-1">United States</p>
+                                            <p class="mb-1">123 Main Street Hilongos, Leyte</p>
+                                            <p class="mb-1">johndoe@fake.com</p>
                                             <p class="mb-1">Phone: (123) 456-7890</p>
                                         </div>
                                     </div>

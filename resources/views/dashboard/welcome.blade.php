@@ -56,4 +56,48 @@
         </div>
         <!-- Navbar & Hero End -->
 
+
+              <!-- Learn sections -->
+       <section id="learn" class="p-5">
+            <div class="container">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-md">
+                        <img src="{{ asset('img/faresync.png') }}" class="img-fluid" alt="fundamentals">
+                    </div>
+                    <div class="col-md p-5">
+                        <h2>Learn more about FareSync</h2>
+                        <p class="lead">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, earum corrupti quibusdam ad quaerat unde.
+                        </p>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis nihil, quos corporis molestiae expedita at minima aspernatur atque beatae architecto dolore reprehenderit autem eum fugiat cupiditate amet, nesciunt, numquam vel.
+                        </p>
+                        <a href="{{ route('register') }}" class="btn btn-light mt-3">
+                           <i class="bi bi-chevron-right"></i> Sign Up
+                        </a>
+                    </div>
+                </div>
+            </div>
+       </section>
+
+       <section id="learn" class="p-5 bg-dark text-light">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-md p-5">
+                    <h2>Learn React</h2>
+                    <p class="lead">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, earum corrupti quibusdam ad quaerat unde.
+                    </p>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis nihil, quos corporis molestiae expedita at minima aspernatur atque beatae architecto dolore reprehenderit autem eum fugiat cupiditate amet, nesciunt, numquam vel.
+                    </p>
+                    <a href="{{ route('login') }}" class="btn btn-light mt-3">
+                       <i class="bi bi-chevron-right"></i> Login
+                    </a>
+                </div>
+                <div class="col-md">
+                    <img src="{{ asset('img/logo-no-bg.png') }}" class="img-fluid" alt="fundamentals">
+                </div>
+            </div>
+        </div>
+   </section>
+
         @include('dashboard.footer')

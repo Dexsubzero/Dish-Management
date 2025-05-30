@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ config('app.name') }}</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="{{ asset('img/faresync.png') }}" rel="icon">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -61,7 +62,8 @@
                 <div class="col-md-2 mb-4 mb-md-0">
                     <h6 class="mb-3">Customer Service</h6>
                     <ul class="list-unstyled small">
-                        <li class="mb-2"><a href="{{ route('directory.contacts') }}" class="text-white">Contact Us</a>
+                        <li class="mb-2"><a href="{{ route('directory.contacts') }}" class="text-white">Contact
+                                Us</a>
                         </li>
                         <li class="mb-2"><a href="{{ route('directory.services') }}" class="text-white">Services</a>
                         </li>
@@ -71,7 +73,8 @@
                 </div>
                 <div class="col-md-2 mb-4 mb-md-0 ms-auto text-end">
                     <h6 class="mb-3">{{ config('app.name') }}</h6>
-                    <p class="text-white" style="font-size: 12px;">Faresync is a digital platform or service that facilitates the real-time
+                    <p class="text-white" style="font-size: 12px;">Faresync is a digital platform or service that
+                        facilitates the real-time
                         synchronization of food-related data—such as menus, pricing, availability, and delivery
                         options—across various components of an eCommerce website.</p>
                 </div>
@@ -97,7 +100,104 @@
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/20c0360bf5.js" crossorigin="anonymous"></script>
-    <script src="{{ asset('js/cart.js') }}"></script>
+    {{-- <script src="{{ asset('js/cart.js') }}"></script> --}}
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            function recalculateTotals() {
+                let subtotal = 0;
+                document.querySelectorAll('.cart-item').forEach(item => {
+                    const price = parseFloat(item.dataset.price);
+                    const quantityInput = item.querySelector('.quantity-input');
+                    const quantity = parseInt(quantityInput.value);
+                    const itemTotal = price * quantity;
+
+                    item.querySelector('.item-total').textContent = `₱${itemTotal.toFixed(2)}`;
+                    subtotal += itemTotal;
+                });
+
+                // Update subtotal and total
+                const discount = 10.00;
+                const total = Math.max(subtotal - discount, 0);
+                document.getElementById('subtotal').textContent = `₱${subtotal.toFixed(2)}`;
+                document.getElementById('total').textContent = `₱${total.toFixed(2)}`;
+            }
+
+            // Handle input change
+            document.querySelectorAll('.quantity-input').forEach(input => {
+                input.addEventListener('change', function() {
+                    if (this.value < 1) this.value = 1;
+                    recalculateTotals();
+                });
+            });
+
+            // Optional: Handle plus/minus buttons
+            document.querySelectorAll('.plus').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const input = this.closest('.d-flex').querySelector('.quantity-input');
+                    input.value = parseInt(input.value) + 1;
+                    input.dispatchEvent(new Event('change'));
+                });
+            });
+
+            document.querySelectorAll('.minus').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const input = this.closest('.d-flex').querySelector('.quantity-input');
+                    if (parseInt(input.value) > 1) {
+                        input.value = parseInt(input.value) - 1;
+                        input.dispatchEvent(new Event('change'));
+                    }
+                });
+            });
+
+            recalculateTotals(); // Initial calculation
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // Handle Remove Button
+            document.querySelectorAll('.remove-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const cartItem = this.closest('.cart-item');
+                    const id = cartItem.getAttribute('data-id');
+
+                    fetch(`/cart/remove/${id}`, {
+                            method: 'DELETE',
+                            headers: {
+                                'X-CSRF-TOKEN': document.querySelector(
+                                    'meta[name="csrf-token"]').getAttribute('content'),
+                                'Accept': 'application/json',
+                            }
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                cartItem.remove(); // Remove item from DOM
+
+                                // Update totals
+                                document.getElementById('subtotal').textContent =
+                                    `₱${data.subtotal.toFixed(2)}`;
+                                document.getElementById('total').textContent =
+                                    `₱${data.total.toFixed(2)}`;
+                            }
+                        })
+                        .catch(error => console.error('Error:', error));
+                });
+            });
+        });
+        document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+            // For each cart item, update hidden inputs
+            document.querySelectorAll('.cart-item').forEach(item => {
+                const id = item.dataset.id;
+                const quantity = item.querySelector('.quantity-input').value;
+                const hiddenInput = document.querySelector(`.quantity-input-hidden-${id}`);
+                if (hiddenInput) {
+                    hiddenInput.value = quantity;
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
