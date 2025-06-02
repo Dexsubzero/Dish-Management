@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -47,11 +48,11 @@ class AuthController extends Controller
             request()->session()->regenerate();
 
             if (auth()->user()->is_role == 1) {
-                return redirect()->route('adminmanager.dashboard');
+                return redirect()->route('adminmanager.mgr-dashboard');
             } elseif (auth()->user()->is_role == 2) {
                 return redirect()->route('adminmanager.dashboard');
             } else {
-                return redirect()->route('dashboard.home');
+                return redirect()->route('dashboard.home', ['id' => Auth::id()]);
             }
         }
 

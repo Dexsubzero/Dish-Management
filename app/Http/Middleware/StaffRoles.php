@@ -30,7 +30,7 @@ class StaffRoles
         }
 
         return match ($user->is_role) {
-            1 => redirect()->route('adminmanager.dashboard'),
+            1 => redirect()->route('adminmanager.mgr-dashboard'),
             2 => redirect()->route('adminmanager.dashboard'),
             default => redirect()->route('dashboard.home'),
         };

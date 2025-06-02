@@ -13,7 +13,7 @@
             @foreach ($dishes as $dish)
             <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
                 <div class="product h-100 shadow-sm rounded overflow-hidden">
-                    <a href="{{ route('show', $dish->id) }}" class="img-prod d-block">
+                    <a href="{{ route('dishes.show', $dish->id) }}" class="img-prod d-block">
                         <img class="img-fluid w-100" src="{{ asset('storage/' . $dish->image) }}" alt="{{ $dish->name }}" style="height: 200px; object-fit: cover;">
                         <div class="overlay"></div>
                     </a>

@@ -19,27 +19,16 @@
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('.nav-link[data-url]').click(function(e) {
+            $('.nav-link.load-content[data-url]').on('click', function(e) {
                 e.preventDefault();
                 const url = $(this).data('url');
 
-                $('#main-content').html('<p>Loading...</p>');
-
-                $.get(url, function(data) {
-                    $('#main-content').html(data);
-                }).fail(function() {
-                    $('#main-content').html('<p>Error loading content.</p>');
-                });
-            });
-        });
-
-        $(document).ready(function() {
-            $('.load-content').on('click', function(e) {
-                e.preventDefault();
-                let url = $(this).data('url');
+                // Set loading message
+                $('#dashboard').html('<p>Loading...</p>');
 
                 $.ajax({
                     url: url,
@@ -48,7 +37,7 @@
                         $('#dashboard').html(response);
                     },
                     error: function(xhr) {
-                        console.log('Error loading content:', xhr);
+                        console.error('Error:', xhr.status, xhr.responseText);
                         $('#dashboard').html(
                             '<p class="text-danger">Failed to load content.</p>');
                     }
@@ -56,6 +45,7 @@
             });
         });
     </script>
+
 </body>
 
 </html>

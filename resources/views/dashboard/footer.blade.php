@@ -3,7 +3,7 @@
         <div class="row g-5">
             <div class="col-lg-3 col-md-6">
                 <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Company</h4>
-                <a class="btn btn-link" href="{{ route('dashboard.home') }}">About Us</a>
+                <a class="btn btn-link" href="{{ route('directory.about') }}">About Us</a>
                 <a class="btn btn-link" href="{{ route('directory.contacts') }}">Contact Us</a>
                 <a class="btn btn-link" href="{{ route('directory.menu') }}">Menu</a>
                 <a class="btn btn-link" href="">Privacy Policy</a>

@@ -21,7 +21,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom mb-4">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="{{ route('dashboard.home') }}">
+            <a class="navbar-brand fw-bold" href="{{ route('dashboard.home', ['id' => Auth::id()]) }}">
                 <i class="fas fa-utensils me-2"></i>{{ config('app.name') }}
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -30,7 +30,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('dashboard.home') }}"><i class="fas fa-home me-1"></i>
+                        <a class="nav-link" href="{{ route('dashboard.home', ['id' => Auth::id()]) }}"><i class="fas fa-home me-1"></i>
                             Home</a>
                     </li>
                     <li class="nav-item">

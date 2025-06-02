@@ -6,6 +6,11 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use App\Models\Dish;
+use App\Imports\DishesImport;
+use App\Exports\DishesExport;
+use Maatwebsite\Excel\Facades\Excel;
+
+
 
 class DishController extends Controller
 {
@@ -80,4 +85,19 @@ class DishController extends Controller
         Dish::destroy($id);
         return redirect('dishes')->with('flash_message', 'Dish Deleted!');
     }
+    public function import(Request $request)
+{
+    $request->validate([
+        'file' => 'required|mimes:xlsx,csv'
+    ]);
+
+    Excel::import(new DishesImport, $request->file('file'));
+
+    return back()->with('success', 'Dishes imported successfully!');
+}
+
+public function export()
+{
+    return Excel::download(new DishesExport, 'dishes.xlsx');
+}
 }

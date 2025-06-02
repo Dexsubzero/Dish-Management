@@ -11,7 +11,7 @@
          </button>
          <div class="collapse navbar-collapse" id="navbarCollapse">
              <div class="navbar-nav ms-auto py-0 pe-4">
-                 <a href="{{ route('dashboard.home') }}" class="nav-item nav-link">Home</a>
+                 <a href="{{ route('dashboard.home', ['id' => Auth::id()]) }}" class="nav-item nav-link">Home</a>
                  <a href="{{ route('directory.services') }}" class="nav-item nav-link">Service</a>
                  <a href="{{ route('directory.menu')}}" class="nav-item nav-link">Menu</a>
                  <a href="{{ route('directory.about')}}" class="nav-item nav-link active">About</a>

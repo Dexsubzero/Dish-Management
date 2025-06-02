@@ -67,9 +67,9 @@
                     <div class="col-md p-5">
                         <h2>Learn more about FareSync</h2>
                         <p class="lead">
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, earum corrupti quibusdam ad quaerat unde.
+                            The smart solution that streamlines food service orders, syncs pricing in real-time, and helps your eCommerce business run smoother than ever.
                         </p>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis nihil, quos corporis molestiae expedita at minima aspernatur atque beatae architecto dolore reprehenderit autem eum fugiat cupiditate amet, nesciunt, numquam vel.
+                        <p>FareSync simplifies food service eCommerce by automating price syncing, menu updates, and order management. It ensures accurate, real-time data across channels, reducing errors and saving time. With easy integration and control, FareSync helps food businesses run smoothly, improve efficiency, and enhance customer satisfaction.
                         </p>
                         <a href="{{ route('register') }}" class="btn btn-light mt-3">
                            <i class="bi bi-chevron-right"></i> Sign Up
@@ -85,9 +85,9 @@
                 <div class="col-md p-5">
                     <h2>Learn React</h2>
                     <p class="lead">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, earum corrupti quibusdam ad quaerat unde.
+                        Welcome to FareSync Dishes
                     </p>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis nihil, quos corporis molestiae expedita at minima aspernatur atque beatae architecto dolore reprehenderit autem eum fugiat cupiditate amet, nesciunt, numquam vel.
+                    <p> Your trusted partner in simplifying food service management. Whether you’re a restaurant owner, caterer, or food supplier, our platform helps you seamlessly sync menus, update prices in real time, and manage orders with ease. We understand the challenges of running a food business, and that’s why FareSync Dishes is designed to save you time, reduce errors, and boost efficiency. Explore our intuitive tools made to help you grow your business and delight your customers.
                     </p>
                     <a href="{{ route('login') }}" class="btn btn-light mt-3">
                        <i class="bi bi-chevron-right"></i> Login

@@ -103,7 +103,7 @@
                         </div>
                     </div>
 
-                    <form id="checkoutForm" method="POST" action="{{ route('directory.checkout') }}">
+                    <form id="checkoutForm" method="GET" action="{{ route('directory.checkout') }}">
                         @csrf
                         @foreach ($cart as $id => $item)
                             <input type="hidden" name="items[{{ $id }}][quantity]"

@@ -16,16 +16,26 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link load-content" href="#" data-url="{{ route('transactions.content') }}">
                         <i class="fas fa-chart-line"></i> Transactions
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link load-content" href="#" data-url="{{ route('transactions.content') }}">
+                        <i class="fas fa-file-export"></i> Export
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link load-content" href="#" data-url="{{ route('transactions.content') }}">
+                        <i class="fas fa-file-import"></i> Import
+                    </a>
+                </li>
                 <li class="nav-item mt-4">
-                <form action="{{ route('logout') }}" method="POST">
-                    @csrf
-                    <button type="submit" class="btn btn-danger w-100">
-                        <i class="fas fa-sign-out-alt"></i> Logout
-                    </button>
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button type="submit" class="btn btn-danger w-100">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </button>
                     </form>
                 </li>
             </ul>
